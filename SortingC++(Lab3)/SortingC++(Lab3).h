@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <vector>
+#include <Windows.h>
 #include <iostream>
 #include <ctime>
 #include <fstream>
@@ -8,6 +9,21 @@ using namespace std;
 struct stats {
 	size_t comparison_count = 0;
 	size_t copy_count = 0;
+
+	void operator+=(const stats& rhs) {
+		this->comparison_count += rhs.comparison_count;
+		this->copy_count += rhs.copy_count;
+	}
+
+	stats operator+(const stats& rhs) {
+		stats temp;
+		temp.comparison_count = this->comparison_count + rhs.comparison_count;
+		temp.copy_count = this->copy_count + rhs.copy_count;
+		return temp;
+	}
+
+
+	
 };
 
 class MyClass {
@@ -79,7 +95,7 @@ stats& Quicksort(vector<T>& v, int start, int end) {
 	return stat;
 }
 
-// double merge sort
+ //double merge sort
 
 template<typename T>
 stats merge(vector<T>& arr, int i, int j) {
@@ -150,7 +166,6 @@ template<typename T>
 stats merge_sort(vector<T> arr) {
 	stats sort_stats;
 	sort_stats += merge_sort(arr, 0, arr.size() - 1);
-	cout << arr;
 	return sort_stats;
 }
 
