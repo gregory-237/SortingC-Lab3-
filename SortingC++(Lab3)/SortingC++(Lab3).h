@@ -118,7 +118,6 @@ stats merge(vector<T>& arr, int i, int j) {
 		arr.insert(arr.begin(), right[count_right]);
 		++count_right;
 	}
-	//cout << arr;
 	return sort_stats;
 }
 
@@ -213,4 +212,3 @@ ofstream& operator<<(ofstream& out, stats& st) {
 	out << st.comparison_count << " " << st.copy_count << '\n';
 	return out;
 }
-
