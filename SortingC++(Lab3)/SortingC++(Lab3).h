@@ -92,76 +92,69 @@ stats Quicksort(vector<T>& arr, int low, int high) {
 
  //double merge sort
 
-template<typename T>
-stats merge(vector<T>& arr, int i, int j) {
-	stats sort_stats;
-	if (i + j >= arr.size()) {
-		j = 1;
+template <typename T>
+stats merge(std::vector<T>& arr, int low, int mid, int high, stats &stat) {
+	int n1 = mid - low + 1;
+	int n2 = high - mid;
+
+	std::vector<T> left(n1);
+	std::vector<T> right(n2);
+
+	for (int i = 0; i < n1; i++) {
+		left[i] = arr[low + i];
+		stat.comparison_count++;
+		stat.copy_count++;
 	}
-	vector<T> right(arr.end() - j, arr.end());
-	vector<T> left(arr.begin(), arr.begin() + i);
-	sort_stats.copy_count += i;
-	sort_stats.copy_count += j;
-	int n1 = left.size();
-	int n2 = right.size();
-	int count_left = 0;
-	int count_right = 0;
-	arr.erase(arr.end() - j, arr.end());
-	arr.erase(arr.begin(), arr.begin() + i);
-	while (count_left < n1 && count_right < n2) {
-		sort_stats.comparison_count += 1;
-		if (left[left.size() - 1 - count_left] > right[count_right]) {
-			arr.insert(arr.begin(), left[left.size() - 1 - count_left]);
-			++count_left;
+	for (int j = 0; j < n2; j++) {
+		right[j] = arr[mid + 1 + j];
+		stat.comparison_count++;
+		stat.copy_count++;
+	}
+
+	int i = 0, j = 0, k = low;
+	while (i < n1 && j < n2) {
+		stat.comparison_count++;
+		if (left[i] < right[j]) { //!!!!
+			arr[k] = left[i];
+			stat.copy_count++;
+			i++;
 		}
 		else {
-			arr.insert(arr.begin(), right[count_right]);
-			++count_right;
+			arr[k] = right[j];
+			stat.copy_count++;
+			j++;
 		}
+		k++;
 	}
-	while (count_left < n1) {
-		sort_stats.comparison_count += 1;
-		arr.insert(arr.begin(), left[left.size() - 1 - count_left]);
-		++count_left;
+
+	while (i < n1) {
+		arr[k] = left[i];
+		i++;
+		k++;
+		stat.comparison_count++;
+		stat.copy_count++;
 	}
-	while (count_right < n2) {
-		sort_stats.comparison_count += 1;
-		arr.insert(arr.begin(), right[count_right]);
-		++count_right;
+
+	while (j < n2) {
+		arr[k] = right[j];
+		j++;
+		k++;
+		stat.comparison_count++;
+		stat.copy_count++;
 	}
-	return sort_stats;
+	return stat;
 }
 
-template<typename T>
-stats merge_sort(vector<T>& arr, int begin, int end) {
-	stats sort_stats;
-	int i_first = begin;
-	int i_last = begin;
-	int j_first = end;
-	int j_last = end;
-	while (i_last < end && arr[i_last] < arr[i_last + 1]) {
-		sort_stats.comparison_count += 1;
-		++i_last;
+template <typename T>
+stats mergeSort(std::vector<T>& arr, int low, int high) {
+	stats stat;
+	if (low < high) {
+		int mid = low + (high - low) / 2;
+		stat = stat + mergeSort(arr, low, mid);
+		stat = stat + mergeSort(arr, mid + 1, high);
+		stat = stat + merge(arr, low, mid, high, stat);
 	}
-	while (j_first > begin && arr[j_first] < arr[j_first - 1]) {
-		sort_stats.comparison_count += 1;
-		--j_first;
-	}
-	if (i_last == arr.size() - 1) {
-		return sort_stats;
-	}
-	else {
-		sort_stats += merge(arr, i_last + 1, j_last - j_first + 1);
-		sort_stats += merge_sort(arr, 0, arr.size() - 1);
-		return sort_stats;
-	}
-}
-
-template<typename T>
-stats merge_sort(vector<T> arr) {
-	stats sort_stats;
-	sort_stats += merge_sort(arr, 0, arr.size() - 1);
-	return sort_stats;
+	return stat;
 }
 
 
