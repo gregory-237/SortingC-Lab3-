@@ -21,9 +21,6 @@ struct stats {
 		temp.copy_count = this->copy_count + rhs.copy_count;
 		return temp;
 	}
-
-
-	
 };
 
 class MyClass {
@@ -64,33 +61,31 @@ stats& SelectionSort(vector<T>& vec) {
 }
 
 //quick sort
-
-template<typename T>
-int Partition(vector<T>& v, int start, int end, stats stat) {
-
-	int pivot = end;
-	int j = start;
-	for (int i = start; i < end; ++i) {
+template <typename T>
+int partition(vector<T>& arr, int low, int high, stats& stat) {
+	T pivot = arr[high];
+	int i = low - 1;
+	for (int j = low; j <= high - 1; j++) {
 		stat.comparison_count++;
-		if (v[i] < v[pivot]) {
-			swap(v[i], v[j]);
-			++j;
+		if (arr[j] < pivot) {
+			i++;
+			swap(arr[i], arr[j]);
 			stat.copy_count += 3;
 		}
 	}
-	swap(v[j], v[pivot]);
+	swap(arr[i + 1], arr[high]);
 	stat.copy_count += 3;
-	return j;
+	return i + 1;
 }
 
-template<typename T>
-stats& Quicksort(vector<T>& v, int start, int end) {
+template <typename T>
+stats Quicksort(vector<T>& arr, int low, int high) {
 	stats stat;
 	stat.comparison_count++;
-	if (start < end) {
-		int p = Partition(v, start, end, stat);
-		stat = stat + Quicksort(v, start, p - 1);
-		stat = stat + Quicksort(v, p + 1, end);
+	if (low < high) {
+		int pi = partition(arr, low, high, stat);
+		stat = stat + Quicksort(arr, low, pi - 1);
+		stat = stat + Quicksort(arr, pi + 1, high);
 	}
 	return stat;
 }
