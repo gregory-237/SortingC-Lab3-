@@ -8,7 +8,7 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-   /* const vector<size_t> vector_lengths = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 25000, 50000, 100000 };
+   /* const vector<size_t> vector_lengths = {1000, 2000, 3000, 4000, 5000, 10000, 25000, 50000, 100000 };
 
      for (size_t length : vector_lengths) {
 
