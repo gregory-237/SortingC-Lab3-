@@ -75,89 +75,98 @@ int main()
          };*/
 
          /*ofstream selection_random_stats_file;
-         selection_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/selection_random_stats.txt", ios::app | ios::out);
+         selection_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/selection_random_stats.txt", ios::app | ios::out);
          selection_random_stats_file << selection_random_mean_stats;
          selection_random_stats_file.close();
 
          ofstream quick_random_stats_file;
-         quick_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/quick_random_stats.txt", ios::app | ios::out);
+         quick_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/quick_random_stats.txt", ios::app | ios::out);
          quick_random_stats_file << quick_random_mean_stats;
          quick_random_stats_file.close();*/
 
          /*ofstream merge_random_stats_file;
-         merge_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/merge_random_stats.txt", ios::app | ios::out);
+         merge_random_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/merge_random_stats.txt", ios::app | ios::out);
          merge_random_stats_file << merge_random_mean_stats;
          merge_random_stats_file.close();*/
 
          /*ofstream selection_sorted_stats_file;
-         selection_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/selection_sorted_stats.txt", ios::app | ios::out);
+         selection_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/selection_sorted_stats.txt", ios::app | ios::out);
          selection_sorted_stats_file << selection_sorted_stats;
          selection_sorted_stats_file.close();
 
          ofstream quick_sorted_stats_file;
-         quick_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/quick_sorted_stats.txt", ios::app | ios::out);
+         quick_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/quick_sorted_stats.txt", ios::app | ios::out);
          quick_sorted_stats_file << quick_sorted_stats;
          quick_sorted_stats_file.close();*/
 
          /*ofstream merge_sorted_stats_file;
-         merge_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/merge_sorted_stats.txt", ios::app | ios::out);
+         merge_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/merge_sorted_stats.txt", ios::app | ios::out);
          merge_sorted_stats_file << merge_sorted_stats;
          merge_sorted_stats_file.close();*/
 
          /*ofstream selection_reverse_sorted_stats_file;
-         selection_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/selection_reverse_sorted_stats.txt", ios::app | ios::out);
+         selection_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/selection_reverse_sorted_stats.txt", ios::app | ios::out);
          selection_reverse_sorted_stats_file << selection_reverse_sorted_stats;
          selection_reverse_sorted_stats_file.close();*/
       
          /*ofstream quick_reverse_sorted_stats_file;
-         quick_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/quick_reverse_sorted_stats.txt", ios::app | ios::out);
+         quick_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/quick_reverse_sorted_stats.txt", ios::app | ios::out);
          quick_reverse_sorted_stats_file << quick_reverse_sorted_stats;
          quick_reverse_sorted_stats_file.close();*/
 
          /*ofstream merge_reverse_sorted_stats_file;
-         merge_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/merge_reverse_sorted_stats.txt", ios::app | ios::out);
+         merge_reverse_sorted_stats_file.open("C://Users/Роллсройсилиройсролс/source/repos/SortingC++(Lab3)/Comparisons_Copies/merge_reverse_sorted_stats.txt", ios::app | ios::out);
          merge_reverse_sorted_stats_file << merge_reverse_sorted_stats;
          merge_reverse_sorted_stats_file.close();
      }*/
 
-    vector<string> selection_string_vec = { "n", "e", "s", "m", "d", "f", "c" , "v", "a", "r" , "j", "a", "x", "t", "y" , "u", "b", "e" , "q", "k", "l", "g", "b", "r" };
-    vector<string> quick_string_vec = { "n", "e", "s", "m", "d", "f", "c" , "v", "a", "r" , "j", "a", "x", "t", "y" , "u", "b", "e" , "q", "k", "l", "g", "b", "r" };
-    vector<string> merge_string_vec = { "n", "e", "s", "m", "d", "f", "c" , "v", "a", "r" , "j", "a", "x", "t", "y" , "u", "b", "e" , "q", "k", "l", "g", "b", "r" };
+    vector<string> selection_string_vec = { "g", "a", "m", "p", "l", "e", "s", "t", "r", "i", "n", "g", "o", "f", "l", "e", "t", "t", "e", "r", "s", "i", "n", "r", "a", "n", "d", "o", "m", "o", "r", "d", "e", "r" };
+    vector<string> quick_string_vec = { "f", "o", "r", "t", "h", "e", "s", "a", "m", "e", "p", "u", "r", "p", "o", "s", "e", "s", "i", "n", "a", "d", "i", "f", "f", "e", "r", "e", "n", "t", "o", "r", "d", "e", "r" };
+    vector<string> merge_string_vec = { "i", "s", "o", "m", "e", "t", "h", "i", "n", "g", "e", "l", "s", "e", "r", "a", "n", "d", "o", "m", "s", "i", "n", "o", "r", "d", "e", "r", "t", "h", "a", "n", "t", "h", "e", "o", "t", "h", "e", "r", "t", "w", "o" };
     stats selection_string_stats = SelectionSort(selection_string_vec);
     stats quick_string_stats = Quicksort(quick_string_vec, 0, quick_string_vec.size() - 1);
     stats merge_string_stats = mergeSort(merge_string_vec, 0, merge_string_vec.size() - 1);
-    cout << selection_string_vec << selection_string_stats << endl;
-    cout << quick_string_vec << quick_string_stats << endl;
-    cout << merge_string_vec << merge_string_stats << endl;
+    cout << "Selection Sort" << endl;
+    cout << selection_string_vec << "_______________________________________" << endl;
+    cout  << endl << "_______________________________________"  << endl;
+    cout << "Quick Sort" << endl;
+    cout << quick_string_vec << "_______________________________________" << endl;
+    cout << endl << "_______________________________________" << endl;
+    cout << "Two Way Merge Sort" << endl;
+    cout << merge_string_vec << "_______________________________________" << endl;
+    cout << endl << "_______________________________________" << endl;
 
-    vector<MyClass> v1;
-    vector<MyClass> v2;
-    vector<MyClass> v3;
+    vector<TaskClass> v1;
+    vector<TaskClass> v2;
+    vector<TaskClass> v3;
 
 
     srand(static_cast<unsigned int>(time(0)));
     for (size_t i = 0; i < 50; ++i) {
         v1.push_back(rand() % 100);
     }
-    cout << v1 << "--------" << endl;
+    cout << "Selection Sort" << endl;
+    cout << v1 << "_______________________________________" << endl;
     stats selection_my_stats = SelectionSort(v1);
-    cout << v1 << endl << "~~~~~~~~~~~~~~" << endl;
+    cout << v1 << endl << "_______________________________________" << endl  <<"_______________________________________" << endl;
 
 
     srand(static_cast<unsigned int>(time(0)));
     for (size_t i = 0; i < 50; ++i) {
         v2.push_back(rand() % 100);
     }
-    cout << v2 << "--------" << endl;
+    cout << "Quick Sort" << endl;
+    cout << v2 << "_____________________________________" << endl;
     stats quick_my_stats = Quicksort(v2, 0, v2.size() - 1);
-    cout << v2 << endl << "~~~~~~~~~~~~~~" << endl;
+    cout << v2 << endl << "_______________________________________" << endl <<"_______________________________________" << endl;
 
 
     srand(static_cast<unsigned int>(time(0)));
     for (size_t i = 0; i < 50; ++i) {
         v3.push_back(rand() % 100);
     }
-    cout << v3 << "--------" << endl;
+    cout << "Two Way Merge Sort" << endl;
+    cout << v3 << "_______________________________________" << endl;
     stats merge_my_stats = mergeSort(v3, 0, v3.size() - 1);
-    cout << v3 << endl << "~~~~~~~~~~~~~~" << endl;
+    cout << v3 << endl << "_______________________________________" << endl  <<"_______________________________________" << endl;
 }

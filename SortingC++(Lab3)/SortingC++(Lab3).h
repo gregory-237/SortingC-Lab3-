@@ -23,23 +23,24 @@ struct stats {
 	}
 };
 
-class MyClass {
+class TaskClass {
 private:
 	int value;
 public:
-	MyClass() : value(0) {};
-	MyClass(const int value) : value(value) {};
+	TaskClass() : value(0) {};
+	TaskClass(const int value) : value(value) {};
 	int get_value() const {
 		return this->value;
 	}
-	bool operator>(const MyClass& rhs) const {
+	bool operator>(const TaskClass& rhs) const {
 		return this->value > rhs.value;
 	}
 
-	bool operator<(const MyClass& rhs) const {
+	bool operator<(const TaskClass& rhs) const {
 		return this->value < rhs.value;
 	}
 };
+
 //selection sort
 
 template<typename T>
@@ -61,6 +62,7 @@ stats& SelectionSort(vector<T>& vec) {
 }
 
 //quick sort
+
 template <typename T>
 int partition(vector<T>& arr, int low, int high, stats& stat) {
 	T pivot = arr[high];
@@ -114,7 +116,7 @@ stats merge(std::vector<T>& arr, int low, int mid, int high, stats &stat) {
 	int i = 0, j = 0, k = low;
 	while (i < n1 && j < n2) {
 		stat.comparison_count++;
-		if (left[i] < right[j]) { //!!!!
+		if (left[i] < right[j]) {
 			arr[k] = left[i];
 			stat.copy_count++;
 			i++;
@@ -160,7 +162,7 @@ stats mergeSort(std::vector<T>& arr, int low, int high) {
 
 
 template <typename T>
-vector<T> RandomVec(size_t size) {
+vector<T> random_vec(size_t size) {
 	vector<T> vec(size);
 	srand(static_cast<unsigned int>(time(0)));
 	for (size_t i = 0; i < size; ++i) {
@@ -170,7 +172,7 @@ vector<T> RandomVec(size_t size) {
 }
 
 template <typename T>
-vector<T> SortedVec(size_t size) {
+vector<T> sorted_vec(size_t size) {
 	vector<T> vec(size);
 	for (size_t i = 0; i < size; ++i) {
 		vec[i] = i;
@@ -179,7 +181,7 @@ vector<T> SortedVec(size_t size) {
 }
 
 template <typename T>
-vector<T> ReverseSortedVec(size_t size) {
+vector<T> reverse_sorted_vec(size_t size) {
 	vector<T> vec(size);
 	for (size_t i = 0; i < size; ++i) {
 		vec[i] = size - i;
@@ -193,20 +195,14 @@ ostream& operator<<(ostream& out, vector<T>& data) {
 		if (i != 0 && i % 10 == 0) {
 			cout << endl;
 		}
-		out.width(4);
+		out.width(3);
 		out << data[i] << ' ';
 	}
 	out << endl;
 	return out;
 }
 
-ostream& operator<<(ostream& out, stats& st) {
-	out << "comparison_count = " << st.comparison_count << endl;
-	out << "copy_count = " << st.copy_count << endl;
-	return out;
-}
-
-ostream& operator<<(ostream& out, MyClass& me) {
+ostream& operator<<(ostream& out, TaskClass& me) {
 	out << me.get_value();
 	return out;
 }
